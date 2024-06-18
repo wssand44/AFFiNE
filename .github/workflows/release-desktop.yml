@@ -121,12 +121,12 @@ jobs:
       - name: Build Desktop Layers
         run: yarn workspace @affine/electron build
 
-      - name: Signing By Apple Developer ID
-        if: ${{ matrix.spec.platform == 'darwin' }}
-        uses: apple-actions/import-codesign-certs@v3
-        with:
-          p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
-          p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
+      # - name: Signing By Apple Developer ID
+      #   if: ${{ matrix.spec.platform == 'darwin' }}
+      #   uses: apple-actions/import-codesign-certs@v3
+      #   with:
+      #     p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
+      #     p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
 
       - name: Install fuse on Linux (for patching AppImage)
         if: ${{ matrix.spec.platform == 'linux' }}
@@ -140,10 +140,10 @@ jobs:
           SKIP_WEB_BUILD: 1
           HOIST_NODE_MODULES: 1
 
-      - name: signing DMG
-        if: ${{ matrix.spec.platform == 'darwin' }}
-        run: |
-          codesign --force --sign "Developer ID Application: TOEVERYTHING PTE. LTD." packages/frontend/electron/out/${{ env.BUILD_TYPE }}/make/AFFiNE.dmg
+      # - name: signing DMG
+      #   if: ${{ matrix.spec.platform == 'darwin' }}
+      #   run: |
+      #     codesign --force --sign "Developer ID Application: SONG WANG" packages/frontend/electron/out/${{ env.BUILD_TYPE }}/make/AFFiNE.dmg
 
       - name: Save artifacts (mac)
         if: ${{ matrix.spec.platform == 'darwin' }}
