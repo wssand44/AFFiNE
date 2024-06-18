@@ -27,7 +27,7 @@ body:
         - macOS ARM 64 (Apple Silicon)
         - Windows x64
         - Linux
-        - Web (app.affine.pro)
+        - Web (affine.selfhost.vip)
         - Web (affine.fail)
         - Web (insider.affine.pro)
     validations:

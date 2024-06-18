@@ -43,7 +43,7 @@ export type RuntimeConfig = z.infer<typeof runtimeFlagsSchema>;
 
 type BrowserBase = {
   /**
-   * @example https://app.affine.pro
+   * @example https://affine.selfhost.vip
    * @example http://localhost:3000
    */
   origin: string;

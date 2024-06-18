@@ -1,6 +1,6 @@
 const ALLOW_ORIGIN = [
   'https://affine.pro',
-  'https://app.affine.pro',
+  'https://affine.selfhost.vip',
   'https://insider.affine.pro',
   'https://affine.fail',
 ];
